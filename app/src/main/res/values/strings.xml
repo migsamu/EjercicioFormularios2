@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Formulario</string>
+    <string name="tvNombre">Nombre</string>
+    <string name="tvEmail">Email</string>
+    <string name="tvMovil">Móvil</string>
+    <string name="tvObservaciones">Observaciones</string>
+    <string name="tvFecha">Fecha</string>
+    <string name="btmCargarInfo">CARGAR INFO</string>
+</resources>
