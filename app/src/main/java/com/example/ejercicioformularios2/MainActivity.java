@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ToggleButton tbObservaciones = (ToggleButton) findViewById(R.id.tbObservaciones);
+        tbObservaciones.setTextOn("Observaciones activadas");
+        tbObservaciones.setTextOff("Observaciones desativadas");
+
+        tbObservaciones.setChecked(true);
     }
 
     public void cargar(View v) {
@@ -30,5 +37,19 @@ public class MainActivity extends AppCompatActivity {
                 .append(etObservaciones.getText()).append("\n")
                 .append(etFecha.getText()));
 
+    }
+
+    public void observaciones(View v){
+        ToggleButton tbObservaciones = (ToggleButton) findViewById(R.id.tbObservaciones);
+        EditText etObservaciones = (EditText) findViewById(R.id.etObservaciones);
+        TextView tvObservaciones = (TextView) findViewById(R.id.tvObservaciones);
+
+        if (tbObservaciones.isChecked()){
+            etObservaciones.setVisibility(View.VISIBLE);
+            tvObservaciones.setVisibility(View.VISIBLE);
+        }else {
+            etObservaciones.setVisibility(View.GONE);
+            tvObservaciones.setVisibility(View.GONE);
+        }
     }
 }
