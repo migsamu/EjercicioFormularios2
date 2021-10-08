@@ -4,22 +4,44 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ToggleButton tbObservaciones;
+    private Switch swObservaciones;
+    private CheckBox cbObservaciones;
+    private EditText etObservaciones;
+    private TextView tvObservaciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ToggleButton tbObservaciones = (ToggleButton) findViewById(R.id.tbObservaciones);
-        tbObservaciones.setTextOn("Observaciones activadas");
-        tbObservaciones.setTextOff("Observaciones desativadas");
+        tbObservaciones = (ToggleButton) findViewById(R.id.tbObservaciones);
+        swObservaciones = (Switch) findViewById(R.id.swObservaciones);
+        cbObservaciones = (CheckBox) findViewById(R.id.cbObservaciones);
+        etObservaciones = (EditText) findViewById(R.id.etObservaciones);
+        tvObservaciones = (TextView) findViewById(R.id.tvObservaciones);
 
-        tbObservaciones.setChecked(true);
+        tbObservaciones.setTextOn("On");
+        tbObservaciones.setTextOff("Off");
+
+        swObservaciones.setTextOff("Off");
+        swObservaciones.setTextOn("On");
+
+        swObservaciones.setChecked(false);
+        tbObservaciones.setChecked(false);
+        cbObservaciones.setChecked(false);
+
+        etObservaciones.setVisibility(View.GONE);
+        tvObservaciones.setVisibility(View.GONE);
+
     }
 
     public void cargar(View v) {
@@ -39,15 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void observaciones(View v){
-        ToggleButton tbObservaciones = (ToggleButton) findViewById(R.id.tbObservaciones);
-        EditText etObservaciones = (EditText) findViewById(R.id.etObservaciones);
-        TextView tvObservaciones = (TextView) findViewById(R.id.tvObservaciones);
+    public void observaciones(View v) {
 
-        if (tbObservaciones.isChecked()){
+        if (tbObservaciones.isChecked() || swObservaciones.isChecked() || cbObservaciones.isChecked()) {
+
             etObservaciones.setVisibility(View.VISIBLE);
             tvObservaciones.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             etObservaciones.setVisibility(View.GONE);
             tvObservaciones.setVisibility(View.GONE);
         }

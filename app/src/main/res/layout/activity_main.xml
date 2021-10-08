@@ -147,4 +147,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etMovil" />
 
+    <Switch
+        android:id="@+id/swObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:onClick="observaciones"
+        android:text="Visible"
+        app:layout_constraintStart_toEndOf="@+id/tbObservaciones"
+        app:layout_constraintTop_toBottomOf="@+id/etMovil" />
+
+    <CheckBox
+        android:id="@+id/cbObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:onClick="observaciones"
+        android:text="Visible"
+        app:layout_constraintStart_toEndOf="@+id/swObservaciones"
+        app:layout_constraintTop_toBottomOf="@+id/etMovil" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
